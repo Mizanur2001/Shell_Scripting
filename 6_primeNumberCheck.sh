@@ -8,7 +8,14 @@
 
 
 echo "Prime Number check"
-n=10
+n=7
+if((n<=0));then
+	echo "You enter negative numbr or zero"
+	exit 0
+elif((n==1));then
+	echo "The number one is neither a prime nor a composite"
+	exit0
+else {
 
 for(( i=2; i<=$n/2; i++))
 do
@@ -17,4 +24,7 @@ do
 		exit 0
 	fi
 done
+
+}
+fi
 echo "$n is a prime number"
