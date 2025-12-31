@@ -26,3 +26,9 @@ Ram_Usage_Percent=$(( Used_Mem * 100 / Total_Mem ))
 
 echo "RAM Usage: ${Used_Mem}MB / ${Total_Mem}MB (${Ram_Usage_Percent}%)"
 
+###-----------------Disk Usage---------------###
+Disk_Usage=$(df -h / | awk 'NR==2 {print $5}')
+Disk_Used=$(df -h / | awk 'NR==2 {print $3}')
+Total_Disk=$(df -h / | awk 'NR==2 {print $2}')
+
+echo "Disk Usage: ${Disk_Used} / ${Total_Disk} (${Disk_Usage})"
